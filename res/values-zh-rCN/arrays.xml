@@ -307,5 +307,62 @@
     <item msgid="7389829271787670252">"询问"</item>
     <item msgid="5077768429488260031">"永不允许"</item>
     <item msgid="1417929597727989746">"始终允许"</item>
-  </string-array>
+  </string-array>  
+    <string-array name="lockscreen_long_key_press_values">
+        <item></item>
+        <item>下一曲</item>
+        <item>上一曲</item>
+        <item>暂停</item>
+        <item>声音</item>
+    </string-array>
+    <string-array name="profile_entries">
+        <item>开启</item>
+        <item>关闭</item>
+        <item>禁止覆盖</item>
+    </string-array>
+    <string-array name="profile_connection_entries">
+        <item>禁用</item>
+        <item>启用</item>
+    </string-array>
+    <string-array name="silent_mode_entries">
+        <item>关闭</item>
+        <item>振动</item>
+        <item>静音</item>
+    </string-array>
+    <string-array name="silent_mode_values">
+        <item>关闭</item>
+        <item>振动</item>
+        <item>静音</item>
+    </string-array>
+    <string-array name="pref_low_battery_warning_policy_entries">
+        <item>系统默认</item>
+        <item>仅弹出窗口</item>
+        <item>仅提示声音</item>
+        <item>禁用警告</item>
+    </string-array>
+    <string-array name="notifs_beh_entries">
+        <item>正常风格</item>
+        <item>从不扩展</item>
+        <item>始终扩展</item>
+        <item>旧式风格</item>
+    </string-array>
+    <string-array name="notification_shortcuts_quantity_entries">
+        <item>4</item>
+        <item>6（默认）</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+    </string-array>
+	<string-array name="entries_flash_widget">
+        <item>正常</item>
+        <item>高亮</item>
+    </string-array>
+    <string-array name="haptic_feedback_entries">
+        <item>使用全局设置</item>
+        <item>开启</item>
+        <item>关闭</item>
+    </string-array>
+	
 </resources>
