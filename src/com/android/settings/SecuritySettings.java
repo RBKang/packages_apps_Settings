@@ -96,6 +96,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
+    private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
 
     DevicePolicyManager mDPM;
 
@@ -129,6 +130,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mSmsSecurityCheck;
     private CheckBoxPreference mPrivacyGuardDefault;
+    private CheckBoxPreference mVisibleGesture;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -188,6 +190,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 case DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC:
                 case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
                     resid = R.xml.security_settings_password;
+                    break;
+                case DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK:
+                    resid = R.xml.security_settings_gesture;
                     break;
             }
         }
@@ -260,6 +265,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
             // Add the additional CyanogenMod settings
             addPreferencesFromResource(R.xml.security_settings_cyanogenmod);
 
+        // visible gesture
+        mVisibleGesture = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_GESTURE);
+
             // Quick Unlock Screen Control
             mQuickUnlockScreen = (CheckBoxPreference) root
                     .findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
@@ -328,6 +336,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // visible dots
         mVisibleDots = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_DOTS);
 
+        // visible gesture
+        mVisibleGesture = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_GESTURE);
+
         // lock instantly on power key press
         mPowerButtonInstantlyLocks = (CheckBoxPreference) root.findPreference(
                 KEY_POWER_INSTANTLY_LOCKS);
@@ -343,6 +354,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 securityCategory.removePreference(mVisiblePattern);
                 securityCategory.removePreference(mVisibleErrorPattern);
                 securityCategory.removePreference(mVisibleDots);
+            }
+            if (securityCategory != null && mVisibleGesture != null) {
+                securityCategory.removePreference(root.findPreference(KEY_VISIBLE_GESTURE));
             }
         }
 
@@ -711,6 +725,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
         } else if (KEY_PRIVACY_GUARD_DEFAULT.equals(key)) {
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.PRIVACY_GUARD_DEFAULT,
                     mPrivacyGuardDefault.isChecked() ? 1 : 0);
+        } else if (KEY_VISIBLE_GESTURE.equals(key)) {
+            lockPatternUtils.setVisibleGestureEnabled(isToggled(preference));
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
