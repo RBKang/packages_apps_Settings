@@ -2067,6 +2067,9 @@
     <string name="lockscreen_buttons_previous">上一首歌曲</string>
     <string name="lockscreen_buttons_playpause">播放/暂停音乐</string>
     <string name="lockscreen_buttons_toggle_sound">切换声音</string>
+    <string name="lockscreen_long_press_assist_title">长按搜索按钮</string>
+    <string name="lockscreen_long_press_app_switch_title">长按应用切换按钮</string>
+    <string name="lockscreen_long_press_camera_title">长按拍照按钮</string>
 
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">振动反馈</string>
@@ -2194,6 +2197,8 @@
     <!-- USB Mass Storage -->
     <string name="usb_mass_storage_title">大容量存储</string>
     <string name="usb_mass_storage_summary">启用 USB 大容量存储</string>
+    <string name="storage_rescan_media">重新扫描大容量存储上的媒体</string>
+    <string name="storage_rescan_media_complete">扫描已完成</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">情景模式</string>
@@ -2582,6 +2587,8 @@
     <string name="hardware_keys_home_long_press_title">长按 Home 键</string>
     <string name="hardware_keys_back_press_title">Back 键</string>
     <string name="hardware_keys_back_long_press_title">长按 Back 键</string>
+    <string name="hardware_keys_camera_press_title">拍照键</string>
+    <string name="hardware_keys_camera_long_press_title">长按拍照键</string>
     <string name="hardware_keys_menu_press_title">点击 Menu 键</string>
     <string name="hardware_keys_menu_long_press_title">长按 Menu 键</string>
     <string name="hardware_keys_assist_press_title">点击 Search 键</string>
@@ -2606,6 +2613,7 @@
     <string name="hardware_keys_action_kill_app">结束程序</string>
     <string name="hardware_keys_action_last_app">切换到最近任务</string>
     <string name="hardware_keys_action_custom_app">自定义应用</string>
+    <string name="hardware_keys_action_camera">拍照</string>
 
     <!-- Powerwidget -->
     <string name="power_widget">开关控件</string>
