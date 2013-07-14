@@ -96,7 +96,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
-    private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
 
     DevicePolicyManager mDPM;
 
@@ -130,7 +129,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mSmsSecurityCheck;
-    private CheckBoxPreference mVisibleGesture;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -339,17 +337,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
         mBiometricWeakLiveliness =
                 (CheckBoxPreference) root.findPreference(KEY_BIOMETRIC_WEAK_LIVELINESS);
 
-        // visible pattern
-        mVisiblePattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_PATTERN);
-
-        // visible error pattern
-        mVisibleErrorPattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_ERROR_PATTERN);
-
-        // visible dots
-        mVisibleDots = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_DOTS);
-
-        // visible gesture
-        mVisibleGesture = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_GESTURE);
 
         // lock instantly on power key press
         mPowerButtonInstantlyLocks = (CheckBoxPreference) root.findPreference(
@@ -728,8 +715,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
         } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
-        } else if (KEY_VISIBLE_GESTURE.equals(key)) {
-            lockPatternUtils.setVisibleGestureEnabled(isToggled(preference));
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
