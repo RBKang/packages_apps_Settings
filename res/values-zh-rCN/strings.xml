@@ -2054,6 +2054,14 @@
     <string name="halo_bubble_text_color_title">信息气泡文字颜色</string>
     <string name="halo_effect_color_title">动画效果颜色</string>
     <string name="halo_effect_color_summary">需要重启系统用户界面</string>
+    <string name="halo_size_title">HALO 大小</string>
+    <string name="halo_size_summary">设置 HALO 的显示大小</string>
+    <string name="halo_size_miniscule">迷你</string>
+    <string name="halo_size_small">小</string>
+    <string name="halo_size_default">@string/pie_mode_default</string>
+    <string name="halo_size_large">大</string>
+    <string name="halo_size_gigantic">巨大</string>
+    <string name="halo_size_monster">庞大</string>
 
     <!-- Lockscreen Hardware keys -->
     <string name="lockscreen_buttons_title">按钮动作</string>
